@@ -1,13 +1,16 @@
-import react from 'react'
+import React from 'react'
 import News from './components/News'
+import { Newsprovider } from './components/NewsContext'
 
 
 function App() {
 
   return (
-    <div className="App">
-      <News />
-    </div>
+    <Newsprovider>
+      <div>
+        <News />
+      </div>
+    </Newsprovider>
   )
 }
 
