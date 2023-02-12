@@ -3,27 +3,24 @@ import NewsCard from './NewsCard';
 import newshook from './NewsContext'
 
 function News() {
-    const { data, changedata } = newshook();
-    async function loadnews() {
-        const result = await fetch('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=70c8447e46874793860fbfa10dfbb5f6')
-        const res = await result.json();
-        const arr = res.articles;
-        changedata(arr);
-    }
+    const { data, changedata, topic, loadnews, changetopic } = newshook();
+    // const [temp, settemp] = useState()
     useEffect(() => {
         loadnews();
-        console.log(data);
-    }, [])
-    console.log(data);
+    }, [topic])
     return (
         <div>
-            <div>
+            <div className=' flex justify-between'>
                 <h1 className=' text-3xl font-bold'>TOP NEWS</h1>
+                <div>
+                    <input type="text" className=' border-2 rounded' />
+                    <button>Search</button>
+                </div>
             </div>
             <div className=' grid grid-cols-3 gap-4 m-4 mt-7 mb-5'>
                 {
-                    data?.map((item, index) => {
-                        return <NewsCard title={item.title} description={item.description} author={item.author} urlToImage={item.urlToImage} url={item.url} key={index} />
+                    data?.slice(0, 30).map((item, index) => {
+                        return <NewsCard title={item.title} description={item.description} author={item.author} urlToImage={item.urlToImage} url={item.url} key={index} id={index} />
                     })
                 }
             </div>
