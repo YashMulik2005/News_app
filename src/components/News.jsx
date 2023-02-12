@@ -4,17 +4,22 @@ import newshook from './NewsContext'
 
 function News() {
     const { data, changedata, topic, loadnews, changetopic } = newshook();
-    // const [temp, settemp] = useState()
+    const [temp, settemp] = useState()
     useEffect(() => {
         loadnews();
     }, [topic])
     return (
         <div>
-            <div className=' flex justify-between'>
+            <div className=' flex justify-between items-center'>
                 <h1 className=' text-3xl font-bold'>TOP NEWS</h1>
                 <div>
-                    <input type="text" className=' border-2 rounded' />
-                    <button>Search</button>
+                    <input type="text" className=' border-2 rounded' onChange={(e) => {
+                        settemp(e.target.value);
+                    }} />
+                    <button className=' border-2 bg-blue-600'
+                        onClick={() => {
+                            changetopic(temp)
+                        }}>Search</button>
                 </div>
             </div>
             <div className=' grid grid-cols-3 gap-4 m-4 mt-7 mb-5'>

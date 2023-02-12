@@ -4,12 +4,7 @@ import newshook from './NewsContext'
 function Navbar() {
     const { topic, changetopic, loadnews } = newshook();
     let arr = ['Cricket', 'Education', 'Coding', 'Artificial-Intelligence', 'Politics', 'Sports', 'Health', 'Mobile', 'Art', 'Space', 'Football', 'Entertainment', 'Music', 'Travel', 'Defence', 'History', 'Science', 'Superhero', 'Food'];
-    // function selecttopic(id) {
-    //     let e = document.getElementById(`${id}`);
 
-    //     // changetopic(e.innerText);
-    //     console.log(id);
-    // }
     return (
         <div>
             <div className=' flex justify-between items-center bg-slate-400 p-2'>
