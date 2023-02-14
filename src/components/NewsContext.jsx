@@ -5,12 +5,16 @@ const NewsContext = createContext();
 export const Newsprovider = ({ children }) => {
     const [data, setdata] = useState();
     const [topic, settopic] = useState('cricket');
+    const [theme, settheme] = useState('white');
 
     const changedata = (val) => {
         setdata(val);
     }
     const changetopic = (event) => {
         settopic(event);
+    }
+    const changetheme = () => {
+        (theme == 'white') ? settheme('black') : settheme('white')
     }
     async function loadnews() {
         let date = new Date();
@@ -25,7 +29,9 @@ export const Newsprovider = ({ children }) => {
         changedata,
         topic,
         changetopic,
-        loadnews
+        loadnews,
+        theme,
+        changetheme
     }
 
     return <NewsContext.Provider value={value}>
