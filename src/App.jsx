@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Newsprovider>
-      <div>
+      <div className=' bg-black'>
         <Navbar />
         <News />
       </div>

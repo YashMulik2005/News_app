@@ -3,20 +3,22 @@ import newshook from './NewsContext'
 
 function NewsCard({ title, description, author, urlToImage, url, publishedAt }) {
     const { theme, changetheme } = newshook();
-    console.log(publishedAt);
     return (
-        <div className={`border-2 bg-${theme}primary flex justify-center  flex-col relative w-full h-full sm:p-3`}>
+        <div className={`p-2 flex justify-center flex-col relative w-full h-full sm:p-3 bg-[#282828] text-white rounded`}>
             {/* <h1>{id}</h1> */}
             <img className='h-40 object-contain m-2' src={urlToImage} alt="" />
             <div className=' flex justify-between items-center'>
                 <section>{publishedAt.substring(0, 10)}</section>
-                <section>{(author === null) ? 'UnKnown' : author}</section>
+                <section>{(author == null) ? 'UnKnown' : author.substring(0, 30)}</section>
             </div>
-            <h1 className=' text-darkprimary font-bold'>{title}</h1>
-            <section>{description.substring(0, 150) + '......'}</section>
-            <section className=' m-2'>
-                <a href={url} className=" absolute bottom-2 right-1">link to full article</a>
-            </section>
+            <div className='p-3'>
+                <h1 className=' text-darkprimary font-bold'>{title}</h1>
+                <br />
+                <section>{description.substring(0, 150) + '......'}</section>
+                <section className=' m-2'>
+                    <a href={url} className=" absolute bottom-2 right-1 bg-green-700 hover:bg-green-900 p-1 rounded font-semibold">Full Article</a>
+                </section>
+            </div>
         </div>
     )
 }
