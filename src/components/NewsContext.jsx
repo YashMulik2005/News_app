@@ -7,6 +7,7 @@ export const Newsprovider = ({ children }) => {
     const [topic, settopic] = useState('cricket');
     const [theme, settheme] = useState('white');
 
+
     const changedata = (val) => {
         setdata(val);
     }
@@ -16,12 +17,19 @@ export const Newsprovider = ({ children }) => {
     const changetheme = () => {
         (theme == 'white') ? settheme('black') : settheme('white')
     }
-    async function loadnews() {
-        let date = new Date();
-        const result = await fetch(`https://newsapi.org/v2/everything?q=${topic}&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&to=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&sortBy=popularity&apiKey=70c8447e46874793860fbfa10dfbb5f6`)
-        const res = await result.json();
-        const arr = res.articles;
-        changedata(arr);
+    async function loadnews(topic) {
+        console.log(topic);
+        const result = await fetch(`http://localhost:3000`, {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                "topic": topic
+            })
+        });
+        const { data } = await result.json();
+        changedata(data);
     }
 
     const value = {
