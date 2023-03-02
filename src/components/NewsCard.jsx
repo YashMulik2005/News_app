@@ -6,10 +6,10 @@ function NewsCard({ title, description, author, urlToImage, url, publishedAt }) 
     return (
         <div className={`p-2 flex justify-center flex-col relative w-full h-full sm:p-3 bg-[#282828] text-white rounded`}>
             {/* <h1>{id}</h1> */}
-            <img className='h-40 object-contain m-2' src={urlToImage} alt="" />
+            <img className='h-40 object-contain m-2' src={urlToImage} alt="" loading="lazy" />
             <div className=' flex justify-between items-center'>
                 <section>{publishedAt.substring(0, 10)}</section>
-                <section>{(author == null) ? 'UnKnown' : author.substring(0, 30)}</section>
+                <section>{(author == null) ? 'UnKnown' : author.substring(0, 25)}</section>
             </div>
             <div className='p-3'>
                 <h1 className=' text-darkprimary font-bold'>{title}</h1>

@@ -12,7 +12,7 @@ function Navbar() {
                 <button onClick={changetheme}>Dark mode</button>
             </div>
             <hr />
-            <div className=' sm:p-2 bg-[#282828] h-10 overflow-x-auto mb-4'>
+            <div className=' sm:p-2 bg-[#282828] h-8 sm:h-10 overflow-x-auto mb-4'>
                 <ul className=' flex gap-5 font-semibold sm:mx-3 cursor-pointer text-white '>
                     {
                         arr.map((item, index) => {
