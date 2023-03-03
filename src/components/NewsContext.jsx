@@ -19,7 +19,7 @@ export const Newsprovider = ({ children }) => {
     }
     async function loadnews(topic) {
         console.log(topic);
-        const result = await fetch(`http://localhost:3000`, {
+        const result = await fetch(`https://notes-app-backend-phi.vercel.app/`, {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
