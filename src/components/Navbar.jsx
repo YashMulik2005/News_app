@@ -1,5 +1,6 @@
 import React from 'react'
 import newshook from './NewsContext'
+import { GiNewspaper } from 'react-icons/gi'
 
 function Navbar() {
     const { topic, changetopic, loadnews, theme, changetheme } = newshook();
@@ -9,7 +10,9 @@ function Navbar() {
         <div>
             <div className=' flex justify-between items-center bg-[#282828] p-2'>
                 <h1 className=' font-bold text-xl text-white'>NEWS <span className=" text-green-500 font-bold">24/7</span></h1>
-                <button onClick={changetheme}>Dark mode</button>
+                <section className=''>
+                    <GiNewspaper size={28} color="white" />
+                </section>
             </div>
             <hr />
             <div className=' sm:p-2 bg-[#282828] h-8 sm:h-10 overflow-x-auto mb-4'>
