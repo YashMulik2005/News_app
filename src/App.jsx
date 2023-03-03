@@ -2,6 +2,7 @@ import React from 'react'
 import News from './components/News'
 import { Newsprovider } from './components/NewsContext'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <div>
         <Navbar />
         <News />
+        <Footer />
       </div>
     </Newsprovider>
   )

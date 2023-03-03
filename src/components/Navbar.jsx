@@ -3,7 +3,7 @@ import newshook from './NewsContext'
 
 function Navbar() {
     const { topic, changetopic, loadnews, theme, changetheme } = newshook();
-    let arr = ['Cricket', 'Education', 'Coding', 'AI', 'Politics', 'Sports', 'Health', 'Mobile', 'Art', 'Space', 'Football', 'Entertainment', 'Music', 'Travel', 'Defence', 'History', 'Science', 'Superhero', 'Food'];
+    let arr = ['Cricket', 'Education', 'Coding', 'AI', 'Politics', 'Sports', 'Health', 'Mobile', 'Art', 'Space', 'Football', 'Entertainment', 'Music', 'Travel', 'Defence', 'History', 'Science', 'Superhero', 'Food', 'Anime', 'Gaming', 'Weather', 'Finance', 'MCU'];
 
     return (
         <div>

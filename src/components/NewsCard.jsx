@@ -6,10 +6,9 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 function NewsCard({ title, description, author, urlToImage, url, publishedAt }) {
     const { theme, changetheme, data } = newshook();
     return (
-        <div className={`p-2 flex justify-center flex-col relative w-full h-full sm:p-3 bg-[#282828] text-white rounded`}>
-            {/* <h1>{id}</h1> */}
+        <div className={`p-4 flex justify-center flex-col relative w-full h-full sm:p-4 bg-[#282828] text-white rounded`}>
             <section className='flex justify-center items-center w-full mb-2'>
-                <LazyLoadImage className='h-40 w-full object-contain' src={urlToImage} alt="" effect="blur" />
+                <LazyLoadImage className='h-40 w-full object-contain rounded-md' src={urlToImage} alt="" effect="blur" />
             </section>
             <div className=' flex justify-between items-center'>
                 <section>{publishedAt.substring(0, 10)}</section>
